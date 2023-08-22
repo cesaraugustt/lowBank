@@ -1,6 +1,6 @@
 ﻿namespace lowBankWindows
 {
-    partial class Form1
+    partial class HomePage
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,16 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomePage));
             painelFundo = new CustomPanel();
             label4 = new Label();
             pictureBox2 = new PictureBox();
             cartaoCredito = new CustomPanel();
-            label3 = new Label();
+            saldoTexto = new Label();
             label2 = new Label();
             button2 = new CustomButton();
             button1 = new CustomButton();
-            label1 = new Label();
+            textoBemVindo = new Label();
             pictureBox1 = new PictureBox();
             painelFundo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -53,12 +53,11 @@
             painelFundo.Controls.Add(cartaoCredito);
             painelFundo.Controls.Add(button2);
             painelFundo.Controls.Add(button1);
-            painelFundo.Controls.Add(label1);
+            painelFundo.Controls.Add(textoBemVindo);
             painelFundo.Location = new Point(0, 117);
             painelFundo.Name = "painelFundo";
             painelFundo.Size = new Size(676, 256);
             painelFundo.TabIndex = 0;
-            painelFundo.Paint += panel1_Paint;
             // 
             // label4
             // 
@@ -82,24 +81,24 @@
             // cartaoCredito
             // 
             cartaoCredito.BackColor = Color.MediumBlue;
-            cartaoCredito.Controls.Add(label3);
+            cartaoCredito.Controls.Add(saldoTexto);
             cartaoCredito.Controls.Add(label2);
             cartaoCredito.Location = new Point(356, 56);
             cartaoCredito.Name = "cartaoCredito";
             cartaoCredito.Size = new Size(300, 180);
             cartaoCredito.TabIndex = 3;
             // 
-            // label3
+            // saldoTexto
             // 
-            label3.AutoSize = true;
-            label3.BackColor = Color.Transparent;
-            label3.Font = new Font("Arial", 27.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.ForeColor = Color.White;
-            label3.Location = new Point(29, 55);
-            label3.Name = "label3";
-            label3.Size = new Size(243, 42);
-            label3.TabIndex = 2;
-            label3.Text = "R$ 10.000,00";
+            saldoTexto.AutoSize = true;
+            saldoTexto.BackColor = Color.Transparent;
+            saldoTexto.Font = new Font("Arial", 27.75F, FontStyle.Regular, GraphicsUnit.Point);
+            saldoTexto.ForeColor = Color.White;
+            saldoTexto.Location = new Point(29, 55);
+            saldoTexto.Name = "saldoTexto";
+            saldoTexto.Size = new Size(243, 42);
+            saldoTexto.TabIndex = 2;
+            saldoTexto.Text = "R$ 10.000,00";
             // 
             // label2
             // 
@@ -123,6 +122,7 @@
             button2.TabIndex = 2;
             button2.Text = "Transferir";
             button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // button1
             // 
@@ -134,17 +134,17 @@
             button1.TabIndex = 1;
             button1.Text = "Depositar";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
-            // label1
+            // textoBemVindo
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(85, 25);
-            label1.Name = "label1";
-            label1.Size = new Size(145, 18);
-            label1.TabIndex = 0;
-            label1.Text = "Bem viado, Cliente!";
-            label1.Click += label1_Click;
+            textoBemVindo.AutoSize = true;
+            textoBemVindo.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            textoBemVindo.Location = new Point(85, 25);
+            textoBemVindo.Name = "textoBemVindo";
+            textoBemVindo.Size = new Size(144, 18);
+            textoBemVindo.TabIndex = 0;
+            textoBemVindo.Text = "Bem vindo, Cliente!";
             // 
             // pictureBox1
             // 
@@ -166,6 +166,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "Form1";
             Text = "Form1";
+            Load += Form1_Load;
             MouseDown += Form1_MouseDown;
             MouseMove += Form1_MouseMove;
             MouseUp += Form1_MouseUp;
@@ -181,13 +182,13 @@
         #endregion
 
         private Panel panel1;
-        private Label label1;
+        private Label textoBemVindo;
         private CustomPanel painelFundo;
         private CustomPanel cartaoCredito;
         private CustomButton button2;
         private CustomButton button1;
         private Label label2;
-        private Label label3;
+        private Label saldoTexto;
         private PictureBox pictureBox2;
         private Label label4;
         private PictureBox pictureBox1;
