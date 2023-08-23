@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace lowBankWindows
 {
-    internal class BaseDataSource
+    public abstract class BaseDataSource
     {
+        public abstract void SalvaCliente(Cliente cliente);
     }
 }

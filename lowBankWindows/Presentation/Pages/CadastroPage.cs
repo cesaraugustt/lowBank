@@ -13,11 +13,12 @@ namespace lowBankWindows
 {
     public partial class CadastroPage : Form
     {
-        private readonly CSVDataSource dataSource = new CSVDataSource();
+        private readonly BaseDataSource dataSource;
 
-        public CadastroPage()
+        public CadastroPage(BaseDataSource datasource)
         {
             InitializeComponent();
+            dataSource = datasource;
         }
 
         private void cadastroButton_Click(object sender, EventArgs e)

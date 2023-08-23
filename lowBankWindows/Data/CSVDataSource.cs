@@ -7,11 +7,11 @@ using lowBankWindows;
 
 namespace lowBankWindows
 {
-    public class CSVDataSource
+    public class CSVDataSource : BaseDataSource
     {
         private string dbPath = "C:\\Users\\cesar\\Downloads\\LowBankBancoDeDados.csv";
 
-        public void SalvaCliente(Cliente cliente)
+        public override void SalvaCliente(Cliente cliente)
         {
             //Salvar novo cliente no documento
             File.AppendAllText(dbPath, "\n" + cliente.ToString());
