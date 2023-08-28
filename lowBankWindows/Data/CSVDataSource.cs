@@ -17,7 +17,7 @@ namespace lowBankWindows
             File.AppendAllText(dbPath, "\n" + cliente.ToString());
         }
 
-        public Cliente? GetClienteCPF(string cpf)
+        public override Cliente? GetClienteCPF(string cpf)
         {
             //Acesar o arquivo, ler o texto
             string[] conteudoArquivo = File.ReadAllLines(dbPath);

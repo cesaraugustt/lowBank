@@ -16,11 +16,12 @@ namespace lowBankWindows
     {
         private bool isDragging = false;
         private Point offset;
-        private readonly CSVDataSource dataSource = new CSVDataSource();
+        private readonly BaseDataSource dataSource;
 
-        public LoginPage()
+        public LoginPage(BaseDataSource dataSource)
         {
             InitializeComponent();
+            this.dataSource = dataSource;
         }
 
         private void loginButton_Click(object sender, EventArgs e)
@@ -86,7 +87,7 @@ namespace lowBankWindows
 
         private void cadastroButton_Click(object sender, EventArgs e)
         {
-            var cadastroPage = new CadastroPage();
+            var cadastroPage = new CadastroPage(dataSource);
             cadastroPage.Show();
 
             cadastroPage.FormClosed += (s, e) => this.Show();

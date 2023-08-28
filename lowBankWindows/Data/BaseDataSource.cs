@@ -9,5 +9,8 @@ namespace lowBankWindows
     public abstract class BaseDataSource
     {
         public abstract void SalvaCliente(Cliente cliente);
+
+        public abstract Cliente GetClienteCPF(string cpfdaTela);
+
     }
 }
